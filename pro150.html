@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = 'https://aframe.io/releases/1.0.4/aframe.min.js'></script>
+    </head>
+    <body>
+        <a-scene background = 'color:white'>
+            <a-camera position = '0 0 0' wasd-controls-enabled="true"></a-camera>
+            <a-assets>
+                <a-asset-item id="train-obj" src="./Project150/tinker.obj"></a-asset-item>
+                <a-asset-item id="train-mtl" src="./Project150/obj.mtl"></a-asset-item>
+                <a-asset-item id="train-gltf" src="Project150.glb"></a-asset-item>
+                <img id = 'ground' src = 'ground1.png'></a-asset-item>
+                <img id = 'bg' src = 'desert.png'>
+                <!--rails-->
+                <a-asset-item id="rail" src="./rail/scene.gltf"></a-asset-item>
+            </a-assets>
+            <a-box src = '#ground' position = '0 -5 -10' rotation = '-90 0 0' height = '30' width = '70'></a-box>
+            <a-plane src = '#bg' position = '0 -2 -15' width = '70' height = '50'></a-plane>
+            <a-entity obj-model="obj: #train-obj; mtl: #train-mtl" position="0 -3.5 -10" rotation="-90 0 0" scale="0.1 0.1 0.1"></a-entity>
+            <a-entity>
+                <a-entity position = '0 -3.8 -10' rotation = '0 0 0' scale = '6.5 2 2' gltf-model = '#rail' ></a-entity>
+            </a-entity>
+        </a-scene>
+    </body>
+</html>
